@@ -63,9 +63,9 @@
     let ultimaEmocao = "";
 
     async function iniciar() {
-      const MODEL_URL = 'https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/models';
-      await faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL);
-      await faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL);
+      const MODEL_URL = './models';
+await faceapi.nets.tinyFaceDetector.loadFromUri(`${MODEL_URL}/tiny_face_detector_model`);
+await faceapi.nets.faceExpressionNet.loadFromUri(`${MODEL_URL}/face_expression_model`);
 
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         try {
